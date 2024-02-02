@@ -1,21 +1,37 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" href="styles.css">
     <title>Login Page</title>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+           
+            if (username === "" || password === "") {
+                alert("Please enter both username and password");
+                return false;
+            }
+
+       
+            return true;
+        }
+    </script>
 </head>
 <body>
     <div class="nav"> 
         <nav>
           <ul>
-            <li><a href="index.html">Signup</a></li>
+            <li><a href="registerpage.html">Signup</a></li>
             <li><a href="login.html">Login</a></li>
-            <li><a href="cv.html">CV</a></li>
-            </ul>
+            <li><a href="index.html">CV</a></li>
+          </ul>
         </nav>
-        </div>
+    </div>
     <div>
         <h2>Login</h2>
-        <form action="your_server_side_script.php" method="post">
+        <form action="your_server_side_script.php" method="post" onsubmit="return validateForm()">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -26,10 +42,9 @@
 
             <br>
 
-           
-            <button type="submit">Login<a href="index.html"></a></button>
+            <button type="submit">Login</button>
         </form>
-         <p>Don't have an account? <a href="index.html">Sign Up here</a>.</p>
+        <p>Don't have an account? <a href="signup.html">Sign Up here</a>.</p>
     </div>
 </body>
 </html>
